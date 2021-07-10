@@ -4,7 +4,8 @@ on:
       branches:
          - master
 
-directory:
+jobs:
+  directory:
     runs-on: [ubuntu-latest]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -22,7 +23,6 @@ directory:
           dst_owner: LarryLecomte
           dst_repo_name: prodserver_cml
 
-jobs:
   run:
     runs-on: [ubuntu-latest]
     steps:
