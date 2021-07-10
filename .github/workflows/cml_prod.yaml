@@ -35,7 +35,7 @@ jobs:
       uses: andstor/copycat-action@v3.0.0
       with:
           personal_token: ${{ secrets.PORTFOLIO_SECRET }}
-          src_path: data/*
-          dst_path: data/
+          src_path: model/*
+          dst_path: model/
           dst_owner: LarryLecomte
           dst_repo_name: prodserver_cml
