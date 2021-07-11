@@ -23,8 +23,12 @@ jobs:
           cml-publish confusion_matrix.png --md >> report.md
           cml-send-comment report.md
 
-    - name: Pushes test file
+  copy:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
       uses: dmnemec/copy_file_to_another_repo_action@main
+      - name: Pushes test file
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
