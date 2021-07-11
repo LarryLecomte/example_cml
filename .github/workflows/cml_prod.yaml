@@ -29,13 +29,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Pushes test file
-        uses: dmnemec/copy_file_to_another_repo_action@main
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: './model.pkcl'
-          destination_repo: 'larrylecomte/prodserver_cml'
-          destination_folder: 'model'
-
+          source-directory: 'model'
+          destination-github-username: 'larrylecomte'
+          destination-repository-name: 'prodserver_cml'
+          user-email: 'larry.lecomte@gmail.com'
+          target-branch: master
   
