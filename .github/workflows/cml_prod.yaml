@@ -18,10 +18,12 @@ jobs:
       uses: andstor/copycat-action@v3.0.0
       with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
-          src_path: /.
+          src_path: /model.pkcl
           dst_path: /model/
           dst_owner: LarryLecomte
           dst_repo_name: prodserver_cml
+          dst_branch: master
+          src_branch: master
 
   run:
     runs-on: [ubuntu-latest]
