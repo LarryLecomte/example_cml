@@ -19,6 +19,9 @@ jobs:
           pip install -r requirements.txt
           python test.py
 
+          git add model/model.pkcl && git commit -m "generate model file"
+          git push origin master
+
           cat metrics.txt >> report.md
           cml-publish confusion_matrix.png --md >> report.md
           cml-send-comment report.md
