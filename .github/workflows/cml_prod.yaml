@@ -27,7 +27,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
-      uses: dmnemec/copy_file_to_another_repo_action@main
+      - uses: dmnemec/copy_file_to_another_repo_action@main
       - name: Pushes test file
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
