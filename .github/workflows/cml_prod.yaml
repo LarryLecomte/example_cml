@@ -19,6 +19,9 @@ jobs:
           pip install -r requirements.txt
           python test.py
 
+          git config --global user.name "larry.lecomte"
+          git config --global user.email "larry.lecomte@gmail.com"
+
           git add model/model.pkcl && git commit -m "generate model file"
           git push origin master
 
