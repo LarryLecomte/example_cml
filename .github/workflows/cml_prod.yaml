@@ -29,14 +29,7 @@ jobs:
           cml-publish confusion_matrix.png --md >> report.md
           cml-send-comment report.md
 
-  copy:
-    runs-on: [ubuntu-latest]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
+      - uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
