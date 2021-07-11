@@ -29,11 +29,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dmnemec/copy_file_to_another_repo_action@main
       - name: Pushes test file
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      with:
-        source_file: 'model.pckl'
-        destination_repo: 'larrylecomte/prodserver_cml'
-        destination_folder: 'model'
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'model.pckl'
+          destination_repo: 'larrylecomte/prodserver_cml'
+          destination_folder: 'model'
 
   
