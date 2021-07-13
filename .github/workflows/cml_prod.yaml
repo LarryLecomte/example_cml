@@ -29,13 +29,16 @@ jobs:
           cml-publish confusion_matrix.png --md >> report.md
           cml-send-comment report.md
 
-      - uses: cpina/github-action-push-to-another-repository@main
+      - uses: andstor/copycat-action@v3
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'model'
-          destination-github-username: 'larrylecomte'
-          destination-repository-name: 'prodserver_cml'
-          user-email: 'larry.lecomte@gmail.com'
-          target-branch: master
-  
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_path: /model/
+          dst_path: /model/
+          dst_owner: larrylecomte
+          dst_repo_name: prodserver_cml
+          dst_branch: master
+          src_branch: master
+          username: larrylecomte
+          email: 'larry.lecomte@gmail.com'
