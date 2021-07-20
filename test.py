@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import plot_confusion_matrix
+import pickle
 
 # Read in data
 df = pd.read_csv("data/winequality-red-test.csv")
