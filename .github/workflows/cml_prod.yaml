@@ -22,8 +22,7 @@ jobs:
           git config --global user.name "larry.lecomte"
           git config --global user.email "larry.lecomte@gmail.com"
 
-          git rm --cached model/model.pkcl
-          git add model/model.pkcl && git commit -m "generate model file"
+          git add model/model.pkcl && git commit -m "generate model file" --allow-empty
           git push origin master
 
           cat metrics.txt >> report.md
